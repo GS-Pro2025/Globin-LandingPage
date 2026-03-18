@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "title": "Globin"
+  },
+  "hero": {
+    "eyebrow": "COMING SOON",
+    "headline": "Something extraordinary for your finances is coming.",
+    "subheadline": "Globin is the smartest personal finance platform built for the US, Europe, and Latin America. Real bank sync. Smart budgets. AI-powered insights. Total control — in one app.",
+    "cta": {
+      "primary": "Request Beta Access",
+      "secondary": "See what's coming ↓"
+    }
+  },
+  "countdown": {
+    "label": "Official launch in",
+    "days": "DAYS",
+    "hours": "HOURS",
+    "minutes": "MINUTES",
+    "seconds": "SECONDS"
+  },
+  "beta": {
+    "eyebrow": "EARLY ACCESS",
+    "title": "Join the Beta. Shape the future of Globin.",
+    "subtitle": "Be among the first 500 users to try Globin before the official launch. Free access. Early features. Your feedback shapes the product.",
+    "perk1": "Free during beta",
+    "perk2": "Priority onboarding",
+    "perk3": "Influence the roadmap",
+    "field": {
+      "name": "Full name",
+      "email": "Email address",
+      "country": "Country",
+      "usecase": "What will you use Globin for?",
+      "referral": "How did you hear about us? (optional)"
+    },
+    "usecase": {
+      "budgeting": "Personal budgeting",
+      "family": "Family finances",
+      "multicurrency": "Multi-currency management",
+      "savings": "Savings goals"
+    },
+    "button": "Request Beta Access →",
+    "disclaimer": "No spam. No credit card. Unsubscribe anytime.",
+    "success": "You're in! We'll contact you before launch. Spot #XXX secured."
+  },
+  "features": {
+    "eyebrow": "FEATURES",
+    "cta": "Get started",
+    "title": "Everything you need to master your money.",
+    "subtitle": "Globin is not just another budget tracker. It's a complete personal finance platform — built for real life.",
+    "card1": {
+      "title": "Real Bank Sync",
+      "description": "Connect your accounts from major banks in the US, Europe, and Latin America. Transactions imported automatically, in real time."
+    },
+    "card2": {
+      "title": "Smart Budgets",
+      "description": "Set spending limits by category. Get alerts before you overspend. Always know where your money goes."
+    },
+    "card3": {
+      "title": "Savings Goals",
+      "description": "Set a goal — vacation, emergency fund, new car — and track your progress automatically every month."
+    },
+    "card4": {
+      "title": "Multi-Currency",
+      "description": "Manage accounts in USD, EUR, COP, BRL and more. Automatic conversion. Reports in your preferred currency."
+    },
+    "card5": {
+      "title": "Shared Payments",
+      "description": "Split expenses with friends or family. Track who owes what and settle up easily — no awkward conversations."
+    },
+    "card6": {
+      "title": "Family Plan",
+      "description": "Manage your whole family's finances from one app. Individual and shared visibility. Custom permissions per member."
+    },
+    "card7": {
+      "title": "AI-Powered Categorization",
+      "description": "Globin automatically categorizes your transactions using AI. Less manual work. More accuracy."
+    },
+    "card8": {
+      "title": "Reports & Dashboard",
+      "description": "Monthly reports, spending charts, category breakdowns, and month-over-month comparisons. Know your financial story."
+    },
+    "card9": {
+      "title": "Automation Rules",
+      "description": "Set rules to auto-categorize, tag, or alert on any transaction. Globin works in the background so you don't have to."
+    }
+  },
+  "how": {
+    "title": "Up and running in minutes.",
+    "step1": {
+      "title": "Connect your bank",
+      "description": "Link your accounts securely. Globin never stores your banking credentials."
+    },
+    "step2": {
+      "title": "Globin organizes everything",
+      "description": "Transactions are automatically categorized, tagged, and matched to your budgets."
+    },
+    "step3": {
+      "title": "You take control",
+      "description": "Track goals, review reports, and make smarter financial decisions — every single day."
+    }
+  },
+  "global": {
+    "title": "Built for your world.",
+    "us": {
+      "label": "United States",
+      "banks": "Chase, Bank of America, Wells Fargo, Citi, and more",
+      "provider": "Powered by Plaid"
+    },
+    "eu": {
+      "label": "Europe",
+      "banks": "Revolut, N26, BBVA, Santander, Monzo, and more",
+      "provider": "Open Banking compliant"
+    },
+    "latam": {
+      "label": "Latin America",
+      "banks": "Bancolombia, Davivienda, Nequi, Nubank, Itaú, and more",
+      "provider": "Powered by Belvo"
+    }
+  },
+  "security": {
+    "title": "Your security is our obsession.",
+    "item1": {
+      "title": "AES-256 Encryption",
+      "description": "Bank-grade encryption on all your data, always."
+    },
+    "item2": {
+      "title": "Zero Credential Storage",
+      "description": "We never store your banking login. Ever."
+    },
+    "item3": {
+      "title": "Open Banking Compliant",
+      "description": "Built to the highest regulatory standards across all three regions."
+    },
+    "item4": {
+      "title": "Read-Only Access",
+      "description": "Globin can see your transactions but can never move your money."
+    }
+  },
+  "finalcta": {
+    "headline": "Ready to take control of your finances?",
+    "subtext": "Join the waitlist. Get beta access. Be part of building Globin.",
+    "button": "Request Beta Access →",
+    "disclaimer": "Free during beta · No credit card · 500 spots available"
+  },
+  "footer": {
+    "tagline": "Your finances, in control.",
+    "nav": {
+      "features": "Features",
+      "beta": "Beta Access",
+      "security": "Security",
+      "contact": "Contact"
+    },
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 Globin. All rights reserved."
+  }
+}

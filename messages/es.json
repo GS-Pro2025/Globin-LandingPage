@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "title": "Globin"
+  },
+  "hero": {
+    "eyebrow": "MUY PRONTO",
+    "headline": "Algo extraordinario para tus finanzas está por llegar.",
+    "subheadline": "Globin es la plataforma de finanzas personales más inteligente para Latinoamérica, Europa y Estados Unidos. Sincronización bancaria real, presupuestos inteligentes, insights con IA y control total en una sola app.",
+    "cta": {
+      "primary": "Solicitar Acceso Beta",
+      "secondary": "Ver qué viene ↓"
+    }
+  },
+  "countdown": {
+    "label": "Lanzamiento oficial en",
+    "days": "DÍAS",
+    "hours": "HORAS",
+    "minutes": "MINUTOS",
+    "seconds": "SEGUNDOS"
+  },
+  "beta": {
+    "eyebrow": "ACCESO ANTICIPADO",
+    "title": "Únete a la Beta. Dale forma al futuro de Globin.",
+    "subtitle": "Sé uno de los primeros 500 usuarios en probar Globin antes del lanzamiento oficial. Acceso gratuito. Funcionalidades anticipadas. Tu feedback da forma al producto.",
+    "perk1": "Gratis durante la beta",
+    "perk2": "Onboarding prioritario",
+    "perk3": "Influye en el producto",
+    "field": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "country": "País",
+      "usecase": "¿Para qué usarás Globin?",
+      "referral": "¿Cómo nos conociste? (opcional)"
+    },
+    "usecase": {
+      "budgeting": "Presupuesto personal",
+      "family": "Finanzas familiares",
+      "multicurrency": "Gestión multimoneda",
+      "savings": "Metas de ahorro"
+    },
+    "button": "Solicitar Acceso Beta →",
+    "disclaimer": "Sin spam. Sin tarjeta de crédito. Cancela cuando quieras.",
+    "success": "¡Ya estás dentro! Te contactaremos antes del lanzamiento. Lugar #XXX asegurado."
+  },
+  "features": {
+    "eyebrow": "FUNCIONALIDADES",
+    "cta": "Comenzar",
+    "title": "Todo lo que necesitas para dominar tu dinero.",
+    "subtitle": "Globin no es solo otro rastreador de gastos. Es una plataforma completa de finanzas personales, construida para la vida real.",
+    "card1": {
+      "title": "Sincronización Bancaria Real",
+      "description": "Conecta cuentas de los principales bancos en EE.UU., Europa y Latinoamérica. Transacciones importadas automáticamente, en tiempo real."
+    },
+    "card2": {
+      "title": "Presupuestos Inteligentes",
+      "description": "Define límites de gasto por categoría. Recibe alertas antes de excederte. Siempre sabe a dónde va tu dinero."
+    },
+    "card3": {
+      "title": "Metas de Ahorro",
+      "description": "Define una meta — vacaciones, fondo de emergencia, auto nuevo — y sigue tu progreso cada mes automáticamente."
+    },
+    "card4": {
+      "title": "Multimoneda",
+      "description": "Gestiona cuentas en USD, EUR, COP, BRL y más. Conversión automática. Reportes en tu moneda preferida."
+    },
+    "card5": {
+      "title": "Pagos Compartidos",
+      "description": "Divide gastos con amigos o familia. Lleva el control de quién debe qué y liquida fácilmente."
+    },
+    "card6": {
+      "title": "Plan Familiar",
+      "description": "Gestiona las finanzas de toda tu familia desde una sola app. Visibilidad individual y compartida. Permisos por miembro."
+    },
+    "card7": {
+      "title": "Categorización con IA",
+      "description": "Globin categoriza automáticamente tus transacciones con inteligencia artificial. Menos trabajo manual. Más precisión."
+    },
+    "card8": {
+      "title": "Reportes y Dashboard",
+      "description": "Reportes mensuales, gráficas de gasto, análisis por categoría y comparativas mes a mes. Conoce tu historia financiera."
+    },
+    "card9": {
+      "title": "Reglas de Automatización",
+      "description": "Configura reglas para categorizar, etiquetar o alertarte en cualquier transacción. Globin trabaja en segundo plano por ti."
+    }
+  },
+  "how": {
+    "title": "Listo en minutos.",
+    "step1": {
+      "title": "Conecta tu banco",
+      "description": "Vincula tus cuentas de forma segura. Globin nunca almacena tus credenciales bancarias."
+    },
+    "step2": {
+      "title": "Globin organiza todo",
+      "description": "Las transacciones se categorizan, etiquetan y cruzan con tus presupuestos automáticamente."
+    },
+    "step3": {
+      "title": "Tú tomas el control",
+      "description": "Sigue tus metas, revisa reportes y toma decisiones financieras más inteligentes cada día."
+    }
+  },
+  "global": {
+    "title": "Hecho para tu mundo.",
+    "us": {
+      "label": "Estados Unidos",
+      "banks": "Chase, Bank of America, Wells Fargo, Citi y más",
+      "provider": "Powered by Plaid"
+    },
+    "eu": {
+      "label": "Europa",
+      "banks": "Revolut, N26, BBVA, Santander, Monzo y más",
+      "provider": "Open Banking compliant"
+    },
+    "latam": {
+      "label": "Latinoamérica",
+      "banks": "Bancolombia, Davivienda, Nequi, Nubank, Itaú y más",
+      "provider": "Powered by Belvo"
+    }
+  },
+  "security": {
+    "title": "Tu seguridad es nuestra obsesión.",
+    "item1": {
+      "title": "Cifrado AES-256",
+      "description": "Cifrado bancario en todos tus datos, siempre."
+    },
+    "item2": {
+      "title": "Sin almacenamiento de credenciales",
+      "description": "Nunca guardamos tu acceso bancario."
+    },
+    "item3": {
+      "title": "Cumplimiento Open Banking",
+      "description": "Construido bajo los más altos estándares regulatorios en las tres regiones."
+    },
+    "item4": {
+      "title": "Acceso de solo lectura",
+      "description": "Globin puede ver tus transacciones pero nunca puede mover tu dinero."
+    }
+  },
+  "finalcta": {
+    "headline": "¿Listo para tomar el control de tus finanzas?",
+    "subtext": "Únete a la lista. Obtén acceso beta. Sé parte de construir Globin.",
+    "button": "Solicitar Acceso Beta →",
+    "disclaimer": "Gratis en beta · Sin tarjeta · 500 cupos disponibles"
+  },
+  "footer": {
+    "tagline": "Tus finanzas, bajo control.",
+    "nav": {
+      "features": "Funcionalidades",
+      "beta": "Acceso Beta",
+      "security": "Seguridad",
+      "contact": "Contacto"
+    },
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "copyright": "© 2025 Globin. Todos los derechos reservados."
+  }
+}
