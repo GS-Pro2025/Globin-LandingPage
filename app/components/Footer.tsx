@@ -24,7 +24,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Left: Logo & Tagline */}
           <div>
-            <h2 className="text-3xl font-bold mb-3" style={{ color: '#A2CB19' }}>
+            <h2 className="text-3xl font-medium mb-3" style={{ color: '#A2CB19' }}>
               {t('nav.title')}
             </h2>
             <p 

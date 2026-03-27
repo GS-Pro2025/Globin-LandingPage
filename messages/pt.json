@@ -8,7 +8,7 @@
       "subheadline": "Globin é a plataforma de finanças pessoais mais inteligente para América Latina, Europa e Estados Unidos. Sincronização bancária real, orçamentos inteligentes, insights com IA e controle total em um só app.",
       "cta": {
         "primary": "Solicitar Acesso Beta",
-        "secondary": "Ver o que vem ↓"
+        "secondary": "Ver o que vem "
       }
     },
     "countdown": {
@@ -20,7 +20,8 @@
     },
     "beta": {
       "eyebrow": "ACESSO ANTECIPADO",
-      "title": "Entre na Beta. Ajude a moldar o futuro do Globin.",
+      "title": "Entre na Beta.",
+      "titles": "Ajude a moldar o futuro do Globin.",
       "subtitle": "Seja um dos primeiros 500 usuários a experimentar o Globin antes do lançamento oficial. Acesso gratuito. Recursos antecipados. Seu feedback molda o produto.",
       "perk1": "Grátis na beta",
       "perk2": "Onboarding prioritário",
@@ -38,7 +39,7 @@
         "multicurrency": "Gestão multidivisa",
         "savings": "Metas de poupança"
       },
-      "button": "Solicitar Acesso Beta →",
+      "button": "Solicitar Acesso Beta",
       "disclaimer": "Sem spam. Sem cartão de crédito. Cancele quando quiser.",
       "success": "Você está dentro! Entraremos em contato antes do lançamento. Vaga #XXX garantida."
     },
@@ -86,6 +87,7 @@
     },
     "how": {
       "title": "Pronto em minutos.",
+      "badge": "Tecnologia 100% Segura",
       "step1": {
         "title": "Conecte seu banco",
         "description": "Vincule suas contas com segurança. Globin nunca armazena suas credenciais bancárias."
@@ -118,7 +120,7 @@
       }
     },
     "security": {
-      "title": "Sua segurança é nossa obsessão.",
+      "title": "Sua segurança é nossa prioridade.",
       "item1": {
         "title": "Criptografia AES-256",
         "description": "Criptografia bancária em todos os seus dados, sempre."

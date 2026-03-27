@@ -39,7 +39,7 @@ export default function Hero() {
       className="min-h-screen flex items-center relative overflow-hidden pt-16"
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#06231DBF]/80" />
+      <div className="absolute inset-0 bg-[#005242]/50" />
 
       {/* Glow ambiental */}
       <div
@@ -101,7 +101,7 @@ export default function Hero() {
             }}
           >
             <span
-              className="px-4 py-1.5 md:px-6 md:py-2 rounded-xl text-xs md:text-sm font-bold tracking-widest uppercase"
+              className="px-4 py-1.5 md:px-6 md:py-2 rounded-xl text-xs md:text-sm font-medium tracking-widest uppercase"
               style={{
                 backgroundColor: "rgba(162, 203, 25, 0.15)",
                 color: "#A2CB19",
@@ -114,7 +114,7 @@ export default function Hero() {
 
           {/* Title */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 md:mb-6 leading-tight"
             style={{
               color: "#D6CECE",
               opacity: isActive ? 1 : 0,
@@ -149,7 +149,7 @@ export default function Hero() {
           >
             <button
               onClick={scrollToBeta}
-              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               style={{
                 backgroundColor: "#A2CB19",
                 color: "#06231D",
@@ -167,7 +167,7 @@ export default function Hero() {
 
             <button
               onClick={scrollToFeatures}
-              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               style={{
                 backgroundColor: "transparent",
                 color: "#A2CB19",

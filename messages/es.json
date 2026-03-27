@@ -8,7 +8,7 @@
     "subheadline": "Globin es la plataforma de finanzas personales más inteligente para Latinoamérica, Europa y Estados Unidos. Sincronización bancaria real, presupuestos inteligentes, insights con IA y control total en una sola app.",
     "cta": {
       "primary": "Solicitar Acceso Beta",
-      "secondary": "Ver qué viene ↓"
+      "secondary": "Ver Funcionalidades"
     }
   },
   "countdown": {
@@ -20,7 +20,8 @@
   },
   "beta": {
     "eyebrow": "ACCESO ANTICIPADO",
-    "title": "Únete a la Beta. Dale forma al futuro de Globin.",
+    "title": "Únete a la Beta.",
+    "titles":"Dale forma al futuro de Globin.",
     "subtitle": "Sé uno de los primeros 500 usuarios en probar Globin antes del lanzamiento oficial. Acceso gratuito. Funcionalidades anticipadas. Tu feedback da forma al producto.",
     "perk1": "Gratis durante la beta",
     "perk2": "Onboarding prioritario",
@@ -38,7 +39,7 @@
       "multicurrency": "Gestión multimoneda",
       "savings": "Metas de ahorro"
     },
-    "button": "Solicitar Acceso Beta →",
+    "button": "Solicitar Acceso Beta",
     "disclaimer": "Sin spam. Sin tarjeta de crédito. Cancela cuando quieras.",
     "success": "¡Ya estás dentro! Te contactaremos antes del lanzamiento. Lugar #XXX asegurado."
   },
@@ -85,6 +86,7 @@
     }
   },
   "how": {
+    "badge": "Tecnología 100% Segura",
     "title": "Listo en minutos.",
     "step1": {
       "title": "Conecta tu banco",
@@ -118,7 +120,7 @@
     }
   },
   "security": {
-    "title": "Tu seguridad es nuestra obsesión.",
+    "title": "Tu seguridad es nuestra prioridad.",
     "item1": {
       "title": "Cifrado AES-256",
       "description": "Cifrado bancario en todos tus datos, siempre."

@@ -157,7 +157,7 @@ export function CountdownTimer() {
                     }}
                   >
                     <span
-                      className="text-5xl md:text-7xl font-bold tabular-nums tracking-tight pulse"
+                      className="text-5xl md:text-7xl font-medium tabular-nums tracking-tight pulse"
                       style={{
                         color: "#A2CB19",
                         fontFamily: "monospace",
@@ -169,7 +169,7 @@ export function CountdownTimer() {
                   </div>
 
                   <div
-                    className="text-xs font-bold tracking-widest uppercase"
+                    className="text-xs font-medium tracking-widest uppercase"
                     style={{ color: "#D6CECE", opacity: 0.7 }}
                   >
                     {unit.label}
@@ -177,7 +177,7 @@ export function CountdownTimer() {
 
                   {index < timeUnits.length - 1 && (
                     <span
-                      className="hidden md:block absolute right-[-1rem] top-5 text-4xl font-bold"
+                      className="hidden md:block absolute right-[-1rem] top-5 text-4xl font-medium"
                       style={{ color: "rgba(162, 203, 25, 0.4)" }}
                     >
                       :

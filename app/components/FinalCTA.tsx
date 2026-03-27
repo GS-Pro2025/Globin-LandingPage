@@ -13,7 +13,7 @@ export function FinalCTA() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Headline */}
         <h2 
-          className="text-4xl md:text-6xl font-bold mb-6"
+          className="text-4xl md:text-6xl font-medium mb-6"
           style={{ color: '#06231D' }}
         >
           {t('finalcta.headline')}
@@ -30,7 +30,7 @@ export function FinalCTA() {
         {/* CTA Button */}
         <button
           onClick={scrollToBeta}
-          className="px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mb-6"
+          className="px-10 py-5 rounded-xl font-medium text-xl transition-all duration-300 hover:scale-105 mb-6"
           style={{
             backgroundColor: '#06231D',
             color: '#A2CB19',

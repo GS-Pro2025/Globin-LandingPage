@@ -8,7 +8,7 @@
     "subheadline": "Globin is the smartest personal finance platform built for the US, Europe, and Latin America. Real bank sync. Smart budgets. AI-powered insights. Total control — in one app.",
     "cta": {
       "primary": "Request Beta Access",
-      "secondary": "See what's coming ↓"
+      "secondary": "See what's coming"
     }
   },
   "countdown": {
@@ -20,7 +20,8 @@
   },
   "beta": {
     "eyebrow": "EARLY ACCESS",
-    "title": "Join the Beta. Shape the future of Globin.",
+    "title": "Join the Beta.",
+    "titles":"Shape the future of Globin.",
     "subtitle": "Be among the first 500 users to try Globin before the official launch. Free access. Early features. Your feedback shapes the product.",
     "perk1": "Free during beta",
     "perk2": "Priority onboarding",
@@ -38,7 +39,7 @@
       "multicurrency": "Multi-currency management",
       "savings": "Savings goals"
     },
-    "button": "Request Beta Access →",
+    "button": "Request Beta Access",
     "disclaimer": "No spam. No credit card. Unsubscribe anytime.",
     "success": "You're in! We'll contact you before launch. Spot #XXX secured."
   },
@@ -85,6 +86,7 @@
     }
   },
   "how": {
+   "badge": "100% Secure Technology",
     "title": "Up and running in minutes.",
     "step1": {
       "title": "Connect your bank",
@@ -118,7 +120,7 @@
     }
   },
   "security": {
-    "title": "Your security is our obsession.",
+    "title": "Your security is our priority.",
     "item1": {
       "title": "AES-256 Encryption",
       "description": "Bank-grade encryption on all your data, always."

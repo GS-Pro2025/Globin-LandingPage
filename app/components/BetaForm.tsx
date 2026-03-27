@@ -49,7 +49,7 @@ export function BetaForm() {
             >
               <Check size={28} style={{ color: '#A2CB19' }} strokeWidth={3} />
             </div>
-            <p className="text-xl font-bold" style={{ color: '#A2CB19' }}>
+            <p className="text-xl font-medium" style={{ color: '#A2CB19' }}>
               {t('beta.success')}
             </p>
           </div>
@@ -121,15 +121,17 @@ export function BetaForm() {
           }}
         >
           {/* Eyebrow */}
-          <span className="text-xs font-bold tracking-widest" style={{ color: '#A2CB19' }}>
+          <span className="text-xs font-medium tracking-widest" style={{ color: '#A2CB19' }}>
             {t('beta.eyebrow')}
           </span>
 
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-2" style={{ color: '#D6CECE' }}>
+          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2" style={{ color: '#D6CECE' }}>
             {t('beta.title')}
           </h2>
-
+          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2" style={{ color: '#D6CECE' }}>
+            {t('beta.titles')}
+          </h2>
           {/* Subtitle */}
           <p className="text-sm md:text-base mb-5 leading-relaxed" style={{ color: '#D6CECE', opacity: 0.7 }}>
             {t('beta.subtitle')}
@@ -301,7 +303,7 @@ export function BetaForm() {
             >
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl font-bold text-base transition-all duration-300 hover:scale-105"
+                className="w-full py-3 rounded-xl font-medium text-base transition-all duration-300 hover:scale-105"
                 style={{
                   backgroundColor: '#A2CB19',
                   color: '#06231D',
