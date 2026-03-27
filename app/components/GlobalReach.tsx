@@ -36,7 +36,7 @@ export function GlobalReach() {
         src="/bg2.jpg"
         alt="Background"
         fill
-        className="object-cover opacity-20 -z-10"
+        className="object-cover -z-10"
       />
 
       <div className="relative max-w-6xl mx-auto z-10 w-full">
