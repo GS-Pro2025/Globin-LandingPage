@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion"; // 1. Importa Variants
+import { motion, Variants } from "framer-motion"; 
 
 export function HowItWorks() {
   const t = useTranslations();
@@ -29,7 +29,7 @@ export function HowItWorks() {
   };
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden bg-brand-dark/50">
+    <section className="relative py-24 px-6 overflow-hidden bg-dark-card/60">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         {/* --- LADO IZQUIERDO: TEXTO Y PASOS --- */}
@@ -43,11 +43,11 @@ export function HowItWorks() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Usamos UrbanCat para el título */}
-            <h2 className="text-4xl md:text-6xl font-display font-medium tracking-tighter uppercase mb-4 text-brand-primary">
+            <h2 className="text-4xl md:text-6xl font-display font-medium tracking-tighter uppercase mb-4 text-primary">
               {t('how.title')}
             </h2>
             <motion.div 
-              className="w-24 h-1.5 rounded-full mx-auto lg:mx-0 bg-brand-primary shadow-[0_0_20px_#C4F04D]" 
+              className="w-24 h-1.5 rounded-full mx-auto lg:mx-0 bg-primary shadow-[0_0_20px_#C4F04D]" 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: false }}
@@ -69,11 +69,11 @@ export function HowItWorks() {
                   x: 10,
                   backgroundColor: 'rgba(196, 240, 77, 0.05)' 
                 }}
-                className="group relative flex items-center gap-6 p-8 rounded-[2rem] border border-white/5 hover:border-brand-primary/30 transition-colors duration-300 bg-white/5 backdrop-blur-md cursor-pointer"
+                className="group relative flex items-center gap-6 p-8 rounded-[2rem] border border-white/5 hover:border-primary/30 transition-colors duration-300 bg-white/5 backdrop-blur-md cursor-pointer"
               >
                 <div className="shrink-0">
                   <motion.span 
-                    className="text-5xl font-black italic block text-brand-primary"
+                    className="text-5xl font-black italic block text-primary"
                     style={{ textShadow: '0 0 15px rgba(196, 240, 77, 0.4)' }}
                     whileHover={{ rotate: -10, scale: 1.2 }}
                   >
@@ -82,7 +82,7 @@ export function HowItWorks() {
                 </div>
 
                 <div className="flex-grow">
-                  <h3 className="text-xl md:text-2xl font-display font-medium uppercase tracking-tight mb-2 text-brand-primary">
+                  <h3 className="text-xl md:text-2xl font-display font-medium uppercase tracking-tight mb-2 text-primary">
                     {t(step.titleKey)}
                   </h3>
                   {/* Nunito entra aquí por defecto */}
@@ -118,7 +118,7 @@ export function HowItWorks() {
             duration: 1.2 
           }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] blur-[120px] rounded-full opacity-20 bg-brand-primary" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] blur-[120px] rounded-full opacity-20 bg-primary" />
           
           <motion.div 
             className="relative z-10"
@@ -143,12 +143,12 @@ export function HowItWorks() {
           </motion.div>
 
           <motion.div 
-            className="absolute -bottom-6 -left-6 p-6 rounded-3xl border border-brand-primary/30 backdrop-blur-xl hidden lg:block z-20 shadow-2xl bg-brand-dark/95"
+            className="absolute -bottom-6 -left-6 p-6 rounded-3xl border border-primary/30 backdrop-blur-xl hidden lg:block z-20 shadow-2xl bg-brand-dark/95"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, type: "spring" }}
           >
-             <p className="text-brand-primary font-display font-medium text-xs uppercase tracking-widest">
+             <p className="text-primary font-display font-medium text-xs uppercase tracking-widest">
                {t('how.badge')}
              </p>
           </motion.div>
