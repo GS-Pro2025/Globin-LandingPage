@@ -126,10 +126,10 @@ export function BetaForm() {
           </span>
 
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2" style={{ color: '#D6CECE' }}>
+          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2 text-primary" >
             {t('beta.title')}
           </h2>
-          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2" style={{ color: '#D6CECE' }}>
+          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-2 text-primary">
             {t('beta.titles')}
           </h2>
           {/* Subtitle */}

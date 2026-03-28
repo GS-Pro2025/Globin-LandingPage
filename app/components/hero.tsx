@@ -1,29 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const t = useTranslations("hero");
-  const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const isActive = loaded && visible;
 
   const scrollToFeatures = () => {
     document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
@@ -34,150 +15,104 @@ export default function Hero() {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen flex items-center relative overflow-hidden pt-16"
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#005242]/50" />
+    <section className="min-h-screen flex items-center relative overflow-hidden pt-24 ">
+      {/* Overlay de marca: Verde oscuro con transparencia */}
+      <div className="absolute inset-0 bg-dark-card/60 z-0" />
 
-      {/* Glow ambiental */}
-      <div
-        className="absolute inset-0 pointer-events-none"
+      {/* Glow ambiental dinámico con Framer Motion */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
-          background: "radial-gradient(ellipse at 60% 50%, rgba(162, 203, 25, 0.07) 0%, transparent 65%)",
-          opacity: isActive ? 1 : 0,
-          transition: "opacity 2s ease",
+          background: "radial-gradient(circle at 70% 50%, rgba(196, 240, 77, 0.12) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12 py-12 md:py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 py-12">
+        
+        {/* LADO IZQUIERDO: CONTENIDO TEXTUAL */}
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+          
+          {/* Badge / Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6"
+          >
+            <span className="px-5 py-2 rounded-full text-xs font-bold tracking-[0.2em] uppercase border border-primary text-primary bg-primary/10">
+              {t("eyebrow")}
+            </span>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-6 leading-[1.1] text-primary"
+          >
+            {t("headline")}
+          </motion.h1>
 
-        {/* TOP en móvil / RIGHT en desktop — Image */}
-        <div
-          className="w-full md:w-1/2 flex justify-center order-1 md:order-2"
-          style={{
-            opacity: isActive ? 1 : 0,
-            transform: isActive ? "translateX(0) scale(1)" : "translateX(60px) scale(0.93)",
-            transition: "opacity 1s ease 0.2s, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
-          }}
+          {/* Subtitle - Usa Nunito por defecto */}
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 0.85, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl mb-10 leading-relaxed max-w-xl font-body"
+          >
+            {t("subheadline")}
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center gap-4 w-full"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToBeta}
+              className="px-10 py-4 rounded-xl font-bold text-lg bg-primary text-dark-card shadow-[0_10px_40px_rgba(196,240,77,0.3)] transition-all w-full sm:w-auto"
+            >
+              {t("cta.primary")}
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(196, 240, 77, 0.1)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToFeatures}
+              className="px-10 py-4 rounded-xl font-bold text-lg border-2 border-primary text-primary bg-transparent transition-all w-full sm:w-auto"
+            >
+              {t("cta.secondary")}
+            </motion.button>
+          </motion.div>
+        </div>
+
+        {/* LADO DERECHO: IMAGEN / MOCKUP */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 50 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full md:w-1/2 flex justify-center order-1 md:order-2 relative"
         >
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-full">
-            <div
-              className="absolute inset-0 blur-3xl rounded-full pointer-events-none"
-              style={{
-                backgroundColor: "rgba(162, 203, 25, 0.12)",
-                opacity: isActive ? 1 : 0,
-                transition: "opacity 2s ease 0.8s",
-              }}
-            />
+          {/* Brillo detrás de la imagen */}
+          <div className="absolute inset-0 blur-[100px] bg-primary/20 rounded-full scale-75 animate-pulse" />
+          
+          <div className="relative z-10 w-full max-w-lg">
             <Image
               src="/Gb1.svg"
               alt="Globin app preview"
               width={820}
               height={500}
-              className="object-contain w-full h-auto relative z-10"
+              className="object-contain w-full h-auto drop-shadow-[0_0_50px_rgba(196,240,77,0.2)]"
               priority
-              style={{
-                filter: isActive
-                  ? "drop-shadow(0 0 30px rgba(162, 203, 25, 0.2))"
-                  : "drop-shadow(0 0 0px rgba(162, 203, 25, 0))",
-                transition: "filter 1.5s ease 0.6s",
-              }}
             />
           </div>
-        </div>
-
-        {/* BOTTOM en móvil / LEFT en desktop — Content */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
-
-          {/* Badge */}
-          <div
-            className="mb-4 md:mb-6 inline-flex"
-            style={{
-              opacity: isActive ? 1 : 0,
-              transform: isActive ? "translateY(0)" : "translateY(-20px)",
-              transition: "opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s",
-            }}
-          >
-            <span
-              className="px-4 py-1.5 md:px-6 md:py-2 rounded-xl text-xs md:text-sm font-medium tracking-widest uppercase"
-              style={{
-                backgroundColor: "rgba(162, 203, 25, 0.15)",
-                color: "#A2CB19",
-                border: "1px solid #A2CB19",
-              }}
-            >
-              {t("eyebrow")}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 md:mb-6 leading-tight"
-            style={{
-              color: "#D6CECE",
-              opacity: isActive ? 1 : 0,
-              transform: isActive ? "translateX(0)" : "translateX(-40px)",
-              transition: "opacity 0.8s ease 0.25s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
-            }}
-          >
-            {t("headline")}
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed"
-            style={{
-              color: "#D6CECE",
-              opacity: isActive ? 0.8 : 0,
-              transform: isActive ? "translateX(0)" : "translateX(-40px)",
-              transition: "opacity 0.8s ease 0.4s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s",
-            }}
-          >
-            {t("subheadline")}
-          </p>
-
-          {/* Buttons */}
-          <div
-            className="flex flex-col sm:flex-row items-center md:items-start gap-3 md:gap-4 w-full"
-            style={{
-              opacity: isActive ? 1 : 0,
-              transform: isActive ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.7s ease 0.6s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s",
-            }}
-          >
-            <button
-              onClick={scrollToBeta}
-              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-              style={{
-                backgroundColor: "#A2CB19",
-                color: "#06231D",
-                boxShadow: "0 0 40px rgba(162, 203, 25, 0.3)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 0 60px rgba(162, 203, 25, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 0 40px rgba(162, 203, 25, 0.3)";
-              }}
-            >
-              {t("cta.primary")}
-            </button>
-
-            <button
-              onClick={scrollToFeatures}
-              className="px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium text-base md:text-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-              style={{
-                backgroundColor: "transparent",
-                color: "#A2CB19",
-                border: "2px solid #A2CB19",
-              }}
-            >
-              {t("cta.secondary")}
-            </button>
-          </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

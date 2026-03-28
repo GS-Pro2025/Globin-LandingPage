@@ -1,13 +1,42 @@
 "use client";
-import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
 export function Footer() {
   const t = useTranslations();
 
+  // Definimos los iconos manualmente para asegurar que todos tengan el mismo ViewBox y estilo
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { 
+      label: 'Instagram', 
+      href: '#',
+      icon: (props: any) => (
+        <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      )
+    },
+    { 
+      label: 'TikTok', 
+      href: '#',
+      icon: (props: any) => (
+        <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+      )
+    },
+    { 
+      label: 'X', 
+      href: '#',
+      icon: (props: any) => (
+        <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4" opacity="0.5"/><path d="M4 20l16-16"/></svg>
+      )
+    },
+    { 
+      label: 'LinkedIn', 
+      href: '#',
+      icon: (props: any) => (
+        <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      )
+    },
   ];
 
   const navLinks = [
@@ -18,91 +47,82 @@ export function Footer() {
   ];
 
   return (
-    <footer className="py-16 px-6" style={{ backgroundColor: '#06231D' }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Left: Logo & Tagline */}
-          <div>
-            <h2 className="text-3xl font-medium mb-3" style={{ color: '#A2CB19' }}>
-              {t('nav.title')}
-            </h2>
-            <p 
-              className="text-sm"
-              style={{ color: '#3B6152' }}
-            >
-              {t('footer.tagline')}
-            </p>
-          </div>
+    <footer className="relative py-20 px-6 overflow-hidden" style={{ backgroundColor: '#03120F' }}>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+          
+          {/* LOGO PNG */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="shrink-0"
+          >
+            <Image 
+              src="/globinlogo.png" 
+              alt="Globin Logo" 
+              width={140} 
+              height={40} 
+              className="object-contain brightness-110"
+            />
+          </motion.div>
 
-          {/* Center: Nav Links */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+          {/* NAVEGACIÓN CENTRAL */}
+          <nav className="flex flex-wrap justify-center gap-8">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="text-sm transition-colors duration-300"
+                className="text-sm font-medium transition-all hover:text-[#C4F04D]"
                 style={{ color: '#D6CECE' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#A2CB19')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#D6CECE')}
               >
                 {t(link.textKey)}
               </a>
             ))}
-          </div>
+          </nav>
 
-          {/* Right: Social Icons */}
-          <div className="flex gap-4 md:justify-end">
-            {socialLinks.map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="p-3 rounded-full transition-all duration-300 hover:scale-110"
-                  style={{ color: '#3B6152' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#A2CB19')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#3B6152')}
-                >
-                  <Icon size={20} />
-                </a>
-              );
-            })}
+          {/* REDES SOCIALES ESTANDARIZADAS */}
+          <div className="flex gap-4">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                aria-label={social.label}
+                whileHover={{ y: -4, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all border group"
+                style={{ 
+                  backgroundColor: 'rgba(196, 240, 77, 0.03)',
+                  borderColor: 'rgba(196, 240, 77, 0.15)',
+                  color: '#A2CB19'
+                }}
+              >
+                <social.icon className="w-5 h-5 group-hover:text-[#C4F04D] transition-colors" />
+                
+                {/* Overlay de brillo en hover */}
+                <motion.div 
+                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-md -z-10"
+                  style={{ backgroundColor: 'rgba(196, 240, 77, 0.2)' }}
+                />
+              </motion.a>
+            ))}
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div 
-          className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderColor: '#3B6152' }}
-        >
-          {/* Legal Links */}
+        {/* LÍNEA FINAL */}
+        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4" 
+             style={{ borderColor: 'rgba(59, 97, 82, 0.3)' }}>
+          <p className="text-xs tracking-widest uppercase" style={{ color: '#3B6152' }}>
+            &copy; {new Date().getFullYear()} GLOBIN — {t('footer.copyright')}
+          </p>
+          
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-sm transition-colors duration-300"
-              style={{ color: '#3B6152' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#A2CB19')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3B6152')}
-            >
+            <a href="#" className="text-xs uppercase hover:text-[#C4F04D] transition-colors" style={{ color: '#3B6152' }}>
               {t('footer.privacy')}
             </a>
-            <a
-              href="#"
-              className="text-sm transition-colors duration-300"
-              style={{ color: '#3B6152' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#A2CB19')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3B6152')}
-            >
+            <a href="#" className="text-xs uppercase hover:text-[#C4F04D] transition-colors" style={{ color: '#3B6152' }}>
               {t('footer.terms')}
             </a>
           </div>
-
-          {/* Copyright */}
-          <p className="text-sm" style={{ color: '#3B6152' }}>
-            {t('footer.copyright')}
-          </p>
         </div>
       </div>
     </footer>
