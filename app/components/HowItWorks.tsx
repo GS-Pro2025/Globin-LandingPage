@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // 1. Importa Variants
 
 export function HowItWorks() {
   const t = useTranslations();
@@ -12,8 +12,8 @@ export function HowItWorks() {
     { number: '03', titleKey: 'how.step3.title', descKey: 'how.step3.description' },
   ];
 
-  // Variantes para los pasos: Entrada con "magnificación" y rebote
-  const stepVariants = {
+  // 2. Tipa explícitamente las variantes
+  const stepVariants: Variants = {
     hidden: { opacity: 0, x: -50, scale: 0.8 },
     visible: (i: number) => ({
       opacity: 1,
@@ -22,14 +22,14 @@ export function HowItWorks() {
       transition: {
         delay: i * 0.15,
         type: "spring",
-        stiffness: 120, // Más nervioso/dinámico
+        stiffness: 120,
         damping: 12
       }
     })
   };
 
   return (
-    <section className="relative py-24 px-6 bg-[#005242]/50 overflow-hidden">
+    <section className="relative py-24 px-6 overflow-hidden bg-brand-dark/50">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         {/* --- LADO IZQUIERDO: TEXTO Y PASOS --- */}
@@ -42,13 +42,12 @@ export function HowItWorks() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tighter uppercase mb-4"
-                style={{ color: '#C4F04D' }}>
+            {/* Usamos UrbanCat para el título */}
+            <h2 className="text-4xl md:text-6xl font-display font-medium tracking-tighter uppercase mb-4 text-brand-primary">
               {t('how.title')}
             </h2>
             <motion.div 
-              className="w-24 h-1.5 rounded-full mx-auto lg:mx-0" 
-              style={{ backgroundColor: '#C4F04D', boxShadow: '0 0 20px #C4F04D' }}
+              className="w-24 h-1.5 rounded-full mx-auto lg:mx-0 bg-brand-primary shadow-[0_0_20px_#C4F04D]" 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: false }}
@@ -70,17 +69,12 @@ export function HowItWorks() {
                   x: 10,
                   backgroundColor: 'rgba(196, 240, 77, 0.05)' 
                 }}
-                className="group relative flex items-center gap-6 p-8 rounded-[2rem] border border-white/5 hover:border-[#C4F04D]/30 transition-colors duration-300"
-                style={{ 
-                  backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                  backdropFilter: 'blur(10px)',
-                  cursor: 'pointer'
-                }}
+                className="group relative flex items-center gap-6 p-8 rounded-[2rem] border border-white/5 hover:border-brand-primary/30 transition-colors duration-300 bg-white/5 backdrop-blur-md cursor-pointer"
               >
                 <div className="shrink-0">
                   <motion.span 
-                    className="text-5xl font-black italic block"
-                    style={{ color: '#C4F04D', textShadow: '0 0 15px rgba(196, 240, 77, 0.4)' }}
+                    className="text-5xl font-black italic block text-brand-primary"
+                    style={{ textShadow: '0 0 15px rgba(196, 240, 77, 0.4)' }}
                     whileHover={{ rotate: -10, scale: 1.2 }}
                   >
                     {step.number}
@@ -88,11 +82,11 @@ export function HowItWorks() {
                 </div>
 
                 <div className="flex-grow">
-                  <h3 className="text-xl md:text-2xl font-medium uppercase tracking-tight mb-2"
-                      style={{ color: '#C4F04D' }}>
+                  <h3 className="text-xl md:text-2xl font-display font-medium uppercase tracking-tight mb-2 text-brand-primary">
                     {t(step.titleKey)}
                   </h3>
-                  <p className="text-white/70 leading-relaxed text-sm md:text-base max-w-md">
+                  {/* Nunito entra aquí por defecto */}
+                  <p className="text-white/70 leading-relaxed text-sm md:text-base max-w-md font-body">
                     {t(step.descKey)}
                   </p>
                 </div>
@@ -124,11 +118,7 @@ export function HowItWorks() {
             duration: 1.2 
           }}
         >
-          {/* Resplandor Detrás (Glow) */}
-          <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] blur-[120px] rounded-full opacity-20"
-            style={{ backgroundColor: '#C4F04D' }}
-          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] blur-[120px] rounded-full opacity-20 bg-brand-primary" />
           
           <motion.div 
             className="relative z-10"
@@ -152,15 +142,13 @@ export function HowItWorks() {
             />
           </motion.div>
 
-          {/* Badge Flotante con entrada retardada */}
           <motion.div 
-            className="absolute -bottom-6 -left-6 p-6 rounded-3xl border border-[#C4F04D]/30 backdrop-blur-xl hidden lg:block z-20 shadow-2xl"
-            style={{ backgroundColor: 'rgba(0, 82, 66, 0.95)' }}
+            className="absolute -bottom-6 -left-6 p-6 rounded-3xl border border-brand-primary/30 backdrop-blur-xl hidden lg:block z-20 shadow-2xl bg-brand-dark/95"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, type: "spring" }}
           >
-             <p className="text-[#C4F04D] font-medium text-xs uppercase tracking-widest">
+             <p className="text-brand-primary font-display font-medium text-xs uppercase tracking-widest">
                {t('how.badge')}
              </p>
           </motion.div>
