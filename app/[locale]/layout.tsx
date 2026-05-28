@@ -8,7 +8,7 @@ import { Nunito } from "next/font/google";
 import localFont from "next/font/local";
 
 const BASE_URL = "https://globinapp.com";
-const DEFAULT_LOCALE = "es";
+const DEFAULT_LOCALE = "en";
 const LOCALES = ["en", "es", "pt"] as const;
 
 const nunito = Nunito({

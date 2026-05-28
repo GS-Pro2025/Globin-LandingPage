@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://globinapp.com";
 const LOCALES = ["en", "es", "pt"] as const;
-const DEFAULT_LOCALE = "es";
+const DEFAULT_LOCALE = "en";
 
 // Añade aquí más rutas si la landing crece
 const ROUTES = ["/"] as const;
