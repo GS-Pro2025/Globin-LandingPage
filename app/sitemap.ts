@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://globin.app"; // 🔁 Cambia por tu dominio real
+const BASE_URL = "https://globinapp.com";
 const LOCALES = ["en", "es", "pt"] as const;
 const DEFAULT_LOCALE = "es";
 

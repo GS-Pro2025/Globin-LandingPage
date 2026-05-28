@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://globin.app"; // 🔁 Cambia por tu dominio real
+const BASE_URL = "https://globinapp.com"; 
 
 export default function robots(): MetadataRoute.Robots {
   return {
