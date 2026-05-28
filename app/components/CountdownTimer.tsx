@@ -8,11 +8,8 @@ export function CountdownTimer() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
-  const targetDate = useMemo(() => {
-    const date = new Date();
-    date.setDate(date.getDate() + 90);
-    return date;
-  }, []);
+  // Fecha fija de lanzamiento: 1 de julio de 2026 a medianoche hora Colombia (UTC-5)
+  const targetDate = useMemo(() => new Date("2026-07-01T05:00:00Z"), []);
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -31,6 +28,8 @@ export function CountdownTimer() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
@@ -92,33 +91,31 @@ export function CountdownTimer() {
                   transition: "opacity 3.5s ease 1s",
                 }}
               />
-                <Image
-                  src="/Gb2.png"
-                  alt="Globin user"
-                  width={380}
-                  height={460}
-                  className="object-cover object-top"
-                  priority
-                  style={{
-                    filter: visible
-                      ? "grayscale(0%) contrast(1) brightness(1) sepia(0%)"
-                      : "grayscale(100%) contrast(1.4) brightness(0.6) sepia(90%)",
-                    transition: "filter 4s cubic-bezier(0.16, 1, 0.3, 1) 2.6s",
-                  }}
-                />
+              <Image
+                src="/Gb2.png"
+                alt="Globin user"
+                width={380}
+                height={460}
+                className="object-cover object-top"
+                priority
+                style={{
+                  filter: visible
+                    ? "grayscale(0%) contrast(1) brightness(1) sepia(0%)"
+                    : "grayscale(100%) contrast(1.4) brightness(0.6) sepia(90%)",
+                  transition: "filter 4s cubic-bezier(0.16, 1, 0.3, 1) 2.6s",
+                }}
+              />
 
-
-                {/* Partículas de polvo */}
-                {visible && (
-                  <>
-                    <div className="dust-particle" style={{ left: "20%", animationDelay: "0.8s" }} />
-                    <div className="dust-particle" style={{ left: "50%", animationDelay: "1.4s" }} />
-                    <div className="dust-particle" style={{ left: "75%", animationDelay: "2s" }} />
-                    <div className="dust-particle" style={{ left: "35%", animationDelay: "2.6s" }} />
-                    <div className="dust-particle" style={{ left: "60%", animationDelay: "3.2s" }} />
-                  </>
-                )}
-              
+              {/* Partículas de polvo */}
+              {visible && (
+                <>
+                  <div className="dust-particle" style={{ left: "20%", animationDelay: "0.8s" }} />
+                  <div className="dust-particle" style={{ left: "50%", animationDelay: "1.4s" }} />
+                  <div className="dust-particle" style={{ left: "75%", animationDelay: "2s" }} />
+                  <div className="dust-particle" style={{ left: "35%", animationDelay: "2.6s" }} />
+                  <div className="dust-particle" style={{ left: "60%", animationDelay: "3.2s" }} />
+                </>
+              )}
             </div>
           </div>
 
