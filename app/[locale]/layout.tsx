@@ -48,19 +48,38 @@ const META: Record<
     title: "Globin — Tu dinero, bajo control",
     description:
       "Globin es la app de finanzas personales para Latinoamérica. Controla tus gastos, ahorra más y alcanza tus metas financieras.",
-    keywords: ["finanzas personales", "ahorro", "presupuesto", "app financiera", "Colombia", "LATAM"],
+    keywords: [
+      "finanzas personales",
+      "ahorro",
+      "presupuesto",
+      "app financiera",
+      "Colombia",
+      "LATAM",
+    ],
   },
   en: {
     title: "Globin — Your money, under control",
     description:
       "Globin is the personal finance app for Latin America. Track expenses, save more, and reach your financial goals.",
-    keywords: ["personal finance", "savings", "budget", "finance app", "Latin America"],
+    keywords: [
+      "personal finance",
+      "savings",
+      "budget",
+      "finance app",
+      "Latin America",
+    ],
   },
   pt: {
     title: "Globin — Seu dinheiro, sob controle",
     description:
       "Globin é o app de finanças pessoais para a América Latina. Controle seus gastos, economize mais e alcance suas metas financeiras.",
-    keywords: ["finanças pessoais", "economia", "orçamento", "app financeiro", "América Latina"],
+    keywords: [
+      "finanças pessoais",
+      "economia",
+      "orçamento",
+      "app financeiro",
+      "América Latina",
+    ],
   },
 };
 
@@ -85,7 +104,7 @@ export async function generateMetadata({
         LOCALES.map((l) => [
           l,
           `${BASE_URL}${l === DEFAULT_LOCALE ? "/" : `/${l}`}`,
-        ])
+        ]),
       ),
     },
     icons: {
@@ -141,11 +160,29 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale}>
           {/* FONDO */}
           <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
-            <div className="hidden md:block relative w-full h-full">
-              <Image src="/Bg1.jpg" alt="BG" fill priority className="object-cover" />
-            </div>
+            {/* Video de fondo: desktop */}
+            <video
+              src="/preview.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
+              className="hidden md:block absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Imagen de fondo: mobile */}
             <div className="md:hidden relative w-full h-full">
-              <Image src="/bg1m.jpg" alt="BG Mobile" fill priority className="object-cover object-top" />
+              <video
+                src="/previewM.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
           </div>
 
