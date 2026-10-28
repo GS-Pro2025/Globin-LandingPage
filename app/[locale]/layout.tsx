@@ -142,6 +142,12 @@ export async function generateMetadata({
   };
 }
 
+const BANNERS: Record<string, string> = {
+  en: "/lgEn.png",
+  es: "/lgEsp.png",
+  pt: "/lgPt.png",
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -160,30 +166,13 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale}>
           {/* FONDO */}
           <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
-            {/* Video de fondo: desktop */}
-            <video
-              src="/preview.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              disablePictureInPicture
-              controlsList="nodownload nofullscreen noremoteplayback"
-              className="hidden md:block absolute inset-0 w-full h-full object-cover"
+            {/* Banner de fondo según idioma */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={BANNERS[locale] ?? BANNERS.en}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            {/* Imagen de fondo: mobile */}
-            <div className="md:hidden relative w-full h-full">
-              <video
-                src="/previewM.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                disablePictureInPicture
-                controlsList="nodownload nofullscreen noremoteplayback"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
           </div>
 
           {/* CONTENIDO */}

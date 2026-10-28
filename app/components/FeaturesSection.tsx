@@ -277,6 +277,25 @@ export function FeaturesSection() {
         #features-card .swiper-slide img {
           position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
         }
+        #features-card .swiper-slide img.fc-coin {
+          inset:auto; top:14px; right:14px; width:64px; height:64px;
+          object-fit:contain; z-index:2; pointer-events:none;
+          filter: drop-shadow(0 6px 10px rgba(6,35,29,.5));
+          animation: fc-coin-float 3s ease-in-out infinite;
+        }
+        #features-card.fc-shuffling .swiper-slide img.fc-coin {
+          animation: fc-coin-pop 0.9s cubic-bezier(.22,1,.36,1) both,
+                     fc-coin-float 3s 0.9s ease-in-out infinite;
+        }
+        @keyframes fc-coin-pop {
+          0%   { transform:translateY(-120px) rotateY(0deg) scale(.3); opacity:0; }
+          60%  { transform:translateY(8px) rotateY(540deg) scale(1.15); opacity:1; }
+          100% { transform:translateY(0) rotateY(720deg) scale(1); opacity:1; }
+        }
+        @keyframes fc-coin-float {
+          0%,100% { transform:translateY(0) rotateY(0deg); }
+          50%     { transform:translateY(-8px) rotateY(180deg); }
+        }
         #features-card .fc-overlay {
           position:absolute; inset:0;
           background:linear-gradient(to top, var(--deep), transparent 60%);
@@ -304,6 +323,31 @@ export function FeaturesSection() {
         #features-card .fc-circles li:nth-child(8)  { left:50%; width:25px;  height:25px;  animation-delay:15s; animation-duration:45s; }
         #features-card .fc-circles li:nth-child(9)  { left:20%; width:15px;  height:15px;  animation-delay:2s;  animation-duration:35s; }
         #features-card .fc-circles li:nth-child(10) { left:85%; width:150px; height:150px; animation-delay:0s;  animation-duration:11s; }
+        #features-card .fc-bg-coins {
+          position:absolute; inset:0; overflow:hidden; list-style:none;
+          margin:0; padding:0; pointer-events:none;
+        }
+        #features-card .fc-bg-coins li {
+          position:absolute; bottom:-150px; opacity:.55;
+          animation:fc-coin-rise 25s linear infinite;
+        }
+        #features-card .fc-bg-coins img { width:100%; height:100%; object-fit:contain; display:block; }
+        #features-card .fc-bg-coins li:nth-child(1) { left:4%; width:28px; height:28px; animation-duration:22s; animation-delay:-0s; }
+        #features-card .fc-bg-coins li:nth-child(2) { left:13%; width:90px; height:90px; animation-duration:30s; animation-delay:-4s; }
+        #features-card .fc-bg-coins li:nth-child(3) { left:23%; width:44px; height:44px; animation-duration:18s; animation-delay:-9s; }
+        #features-card .fc-bg-coins li:nth-child(4) { left:32%; width:130px; height:130px; animation-duration:38s; animation-delay:-2s; }
+        #features-card .fc-bg-coins li:nth-child(5) { left:41%; width:60px; height:60px; animation-duration:26s; animation-delay:-14s; }
+        #features-card .fc-bg-coins li:nth-child(6) { left:50%; width:34px; height:34px; animation-duration:16s; animation-delay:-7s; }
+        #features-card .fc-bg-coins li:nth-child(7) { left:59%; width:104px; height:104px; animation-duration:34s; animation-delay:-1s; }
+        #features-card .fc-bg-coins li:nth-child(8) { left:68%; width:50px; height:50px; animation-duration:24s; animation-delay:-11s; }
+        #features-card .fc-bg-coins li:nth-child(9) { left:77%; width:72px; height:72px; animation-duration:28s; animation-delay:-5s; }
+        #features-card .fc-bg-coins li:nth-child(10) { left:85%; width:30px; height:30px; animation-duration:20s; animation-delay:-16s; }
+        #features-card .fc-bg-coins li:nth-child(11) { left:92%; width:118px; height:118px; animation-duration:40s; animation-delay:-3s; }
+        #features-card .fc-bg-coins li:nth-child(12) { left:46%; width:46px; height:46px; animation-duration:32s; animation-delay:-19s; }
+        @keyframes fc-coin-rise {
+          0%   { transform:translateY(0) rotate(0deg); }
+          100% { transform:translateY(-1000px) rotate(720deg); opacity:0; }
+        }
         @keyframes fc-animate {
           0%   { transform:translateY(0) rotate(0deg);         border-radius:0; }
           100% { transform:translateY(-1000px) rotate(720deg); border-radius:50%; opacity:0; }
@@ -366,6 +410,8 @@ export function FeaturesSection() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={slide.src} alt={slide.alt} />
                     <div className="fc-overlay" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="fc-coin" src="/coin.png" alt="" />
                   </div>
                 ))}
               </div>
@@ -375,6 +421,14 @@ export function FeaturesSection() {
 
         <ul className="fc-circles">
           {Array.from({ length: 10 }).map((_, i) => <li key={i} />)}
+        </ul>
+        <ul className="fc-bg-coins">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <li key={i}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" />
+            </li>
+          ))}
         </ul>
       </section>
     </>

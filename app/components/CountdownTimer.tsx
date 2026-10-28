@@ -8,8 +8,8 @@ export function CountdownTimer() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
-  // Fecha fija de lanzamiento: 1 de julio de 2026 a medianoche hora Colombia (UTC-5)
-  const targetDate = useMemo(() => new Date("2026-07-01T05:00:00Z"), []);
+  // Fecha fija de lanzamiento: 31 de octubre de 2026 a medianoche hora Colombia (UTC-5)
+  const targetDate = useMemo(() => new Date("2026-10-31T05:00:00Z"), []);
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,

@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${BASE_URL}${localePath}`,
-        lastModified: new Date("2026-07-01"),
+        lastModified: new Date("2026-10-31"),
         changeFrequency: "monthly",
         priority: route === "/" ? 1.0 : 0.8,
         alternates: {
